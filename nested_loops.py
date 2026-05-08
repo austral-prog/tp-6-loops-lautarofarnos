@@ -7,7 +7,13 @@ def flatten(matrix):
 
     Ejemplo: flatten([[1, 2], [3, 4], [5, 6]]) -> [1, 2, 3, 4, 5, 6]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    result = []
+    for row in matrix:
+        for item in row:
+            result.append(item)
+    return result
+
+#flatten(matrix)
 
 
 def row_sums(matrix):
@@ -17,7 +23,15 @@ def row_sums(matrix):
 
     Ejemplo: row_sums([[1, 2, 3], [4, 5, 6]]) -> [6, 15]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    result = []
+    for row in matrix:
+        total = 0
+        for item in row:
+            total += item
+        result.append(total)
+    return result
+
+#row_sums(matrix)
 
 
 def col_sums(matrix):
@@ -28,4 +42,14 @@ def col_sums(matrix):
 
     Ejemplo: col_sums([[1, 2, 3], [4, 5, 6]]) -> [5, 7, 9]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    if not matrix:
+        return []
+    result = []
+    for col in range(len(matrix[0])):
+        total = 0
+        for row in matrix:
+            total += row[col]
+        result.append(total)
+    return result
+
+#col_sums(matrix)
